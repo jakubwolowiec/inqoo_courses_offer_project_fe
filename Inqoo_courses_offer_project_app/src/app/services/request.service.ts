@@ -7,11 +7,11 @@ import {CategoryModel} from "../category/category-page/CategoryModel";
   providedIn: 'root'
 })
 export class RequestService {
-private url: string = "http://localhost:8080/category";
+private url: string = "http://localhost:8080/";
   constructor(private httpClient: HttpClient) {}
 
   getRecords(): Observable<CategoryModel[]>{
-    return this.httpClient.get<CategoryModel[]>(this.url);
+    return this.httpClient.get<CategoryModel[]>(this.url + "category");
   }
 
 }
